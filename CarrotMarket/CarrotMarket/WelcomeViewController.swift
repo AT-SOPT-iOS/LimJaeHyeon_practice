@@ -9,11 +9,11 @@ import UIKit
 
 final class WelcomeViewController: UIViewController {
    
-    var id: String?
+    private var id: String?
     
     private let logoImageView: UIImageView = {
         let imageView = UIImageView(frame: .init(x: 100, y: 100, width: 150, height: 150))
-        imageView.image = UIImage(named: "logoImage")
+        imageView.image = UIImage(named: "rabbit")
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -88,6 +88,11 @@ final class WelcomeViewController: UIViewController {
         if let id = id {
             self.welcomeLabel.text = "\(id)님 반가워요"
         }
-        
     }
+    
+    func setLabelText(_ id: String?) {
+        self.id = id
+    }
+    
+    
 }

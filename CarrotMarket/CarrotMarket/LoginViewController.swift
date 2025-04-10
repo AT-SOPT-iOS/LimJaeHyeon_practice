@@ -74,25 +74,18 @@ final class LoginViewController: UIViewController {
     
     private func presentToWelcomeVC() {
         let welcomeViewController = WelcomeViewController()
-        
-        var isEmpty: Bool = idTextField.text! == "" ? true : false
-        
-        print("\(isEmpty)-isempty")
-        
-      //  welcomeViewController.id = isEmpty ? "???" : idTextField.text
-
+        let inputTextField = idTextField.text?.isEmpty == true ? nil : idTextField.text
+        welcomeViewController.setLabelText(inputTextField ?? "???")
+        print("id 값 뭐야? \(String(describing: inputTextField))")
         welcomeViewController.modalPresentationStyle = .formSheet
         self.present(welcomeViewController, animated: false)
     }
     
     private func pushToWelcomeVC() {
         let welcomeViewController = WelcomeViewController()
-        
-        var isEmpty: Bool = idTextField.text! == "" ? true : false
-        print("\(isEmpty)-isempty")
-     //   welcomeViewController.id = isEmpty ? "???" : idTextField.text
-        
-  //      print("id 값 뭐야? \(String(describing: welcomeViewController.id))")
+        let inputTextField = idTextField.text?.isEmpty == true ? nil : idTextField.text
+        welcomeViewController.setLabelText(inputTextField ?? "???")
+        print("id 값 뭐야? \(String(describing: inputTextField))")
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
     }
 }
