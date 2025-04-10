@@ -56,6 +56,11 @@ final class WelcomeViewController: UIViewController {
            bindID()
        }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationItem.hidesBackButton = true
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,11 +77,22 @@ final class WelcomeViewController: UIViewController {
     
     @objc
     func backToLoginButtonDidTap() {
-        if self.navigationController == nil {
-            self.dismiss(animated: true)
-        } else {
-            self.navigationController?.popViewController(animated: true)
+        
+        let alert = UIAlertController(title: "다시 로그인", message: "돌아가면 다시 로그인해야해요", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "네", style: .default) { _ in
+            print("알람 네 클릭했어요~")
+            if self.navigationController == nil {
+                self.dismiss(animated: true)
+            } else {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
+        let cancel = UIAlertAction(title: "아니요", style: .destructive)
+        alert.addAction(action)
+        alert.addAction(cancel)
+        present(alert,animated: true,completion: nil)
+
     }
     
     @objc
