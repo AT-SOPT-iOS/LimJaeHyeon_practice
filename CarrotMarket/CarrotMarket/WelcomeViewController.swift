@@ -69,6 +69,14 @@ final class WelcomeViewController: UIViewController {
       
     }
     
+    func setLabelText(_ id: String?) {
+        self.id = id
+    }
+    
+}
+
+private extension WelcomeViewController {
+    
     private func setUpUI() {
         [logoImageView,welcomeLabel,goToMainButton,backToLoginButton].forEach {
             self.view.addSubview($0)
@@ -105,10 +113,5 @@ final class WelcomeViewController: UIViewController {
             self.welcomeLabel.text = "\(id)님 반가워요"
         }
     }
-    
-    func setLabelText(_ id: String?) {
-        self.id = id
-    }
-    
     
 }

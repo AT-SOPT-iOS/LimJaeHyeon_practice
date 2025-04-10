@@ -59,17 +59,14 @@ final class LoginViewController: UIViewController {
         setupUI()
     }
     
+}
+
+private extension LoginViewController {
+   
     func setupUI() {
         [titleLabel,idTextField,passwordTextField,loginButton].forEach {
             self.view.addSubview($0)
         }
-    }
-    
-    @objc
-    func loginButtonDidTapped() {
-        print("button Tapped")
-  //    presentToWelcomeVC()
-        pushToWelcomeVC()
     }
     
     private func presentToWelcomeVC() {
@@ -87,5 +84,12 @@ final class LoginViewController: UIViewController {
         welcomeViewController.setLabelText(inputTextField ?? "???")
         print("id 값 뭐야? \(String(describing: inputTextField))")
         self.navigationController?.pushViewController(welcomeViewController, animated: true)
+    }
+    
+    @objc
+    func loginButtonDidTapped() {
+        print("button Tapped")
+  //    presentToWelcomeVC()
+        pushToWelcomeVC()
     }
 }
