@@ -12,7 +12,7 @@ final class LoginViewController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel(frame: .init(x: 69, y: 161, width: 236, height: 44))
         label.text = "동네라서 가능한 모든것\n당근에서 가까운 이웃과 함께해요."
-        label.textColor = .black
+        label.textColor = .PrimaryOrange
         label.textAlignment = .center
         label.numberOfLines = 2
         label.font = .h1
