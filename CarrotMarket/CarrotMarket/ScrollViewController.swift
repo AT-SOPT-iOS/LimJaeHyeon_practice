@@ -49,6 +49,7 @@ final class ScrollViewController: UIViewController {
             
         ])
         scrollView.backgroundColor = .white
+        scrollView.showsVerticalScrollIndicator = false
         
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
@@ -56,7 +57,7 @@ final class ScrollViewController: UIViewController {
             contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor),
-            contentView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor)
+//            contentView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor)
         ])
         contentView.backgroundColor = .gray
         
@@ -98,7 +99,8 @@ final class ScrollViewController: UIViewController {
             blueView.topAnchor.constraint(equalTo: yellowView.bottomAnchor),
             blueView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             blueView.widthAnchor.constraint(equalToConstant: screenWidthSize),
-            blueView.heightAnchor.constraint(equalToConstant: 300)
+            blueView.heightAnchor.constraint(equalToConstant: 300),
+            blueView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         blueView.backgroundColor = .blue
@@ -107,7 +109,8 @@ final class ScrollViewController: UIViewController {
             purpleView.topAnchor.constraint(equalTo: greenView.bottomAnchor),
             purpleView.leadingAnchor.constraint(equalTo: blueView.trailingAnchor),
             purpleView.widthAnchor.constraint(equalToConstant: screenWidthSize),
-            purpleView.heightAnchor.constraint(equalToConstant: 300)
+            purpleView.heightAnchor.constraint(equalToConstant: 300),
+            purpleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
         purpleView.backgroundColor = .purple
