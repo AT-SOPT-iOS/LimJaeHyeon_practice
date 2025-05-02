@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  CarrotMarket
+//  Week3
 //
-//  Created by 임재현 on 4/10/25.
+//  Created by 임재현 on 4/26/25.
 //
 
 import UIKit
@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             guard let windowScene = (scene as? UIWindowScene) else { return }
             let window = UIWindow(windowScene: windowScene)
         
-            let loginViewController = ScrollViewController()
+            let loginViewController = ItemViewController()
             let navigationController = UINavigationController(rootViewController: loginViewController)
             window.rootViewController = navigationController
             window.makeKeyAndVisible()
