@@ -1,14 +1,13 @@
 //
-//  LoginViewController.swift
+//  LoginViewController_Delegate.swift
 //  CarrotMarket
 //
-//  Created by 임재현 on 4/10/25.
+//  Created by 임재현 on 4/12/25.
 //
 
 import UIKit
 
-
-final class LoginViewController: UIViewController {
+final class LoginViewController_Delegate: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel(frame: .init(x: 69, y: 161, width: 236, height: 44))
@@ -62,7 +61,7 @@ final class LoginViewController: UIViewController {
     
 }
 
-private extension LoginViewController {
+private extension LoginViewController_Delegate {
    
     func setupUI() {
         [titleLabel,idTextField,passwordTextField,loginButton].forEach {
@@ -80,7 +79,8 @@ private extension LoginViewController {
     }
     
     private func pushToWelcomeVC() {
-        let welcomeViewController = WelcomeViewController()
+        let welcomeViewController = WelcomeViewController_Delegate()
+        welcomeViewController.delegate = self
         let inputTextField = idTextField.text?.isEmpty == true ? nil : idTextField.text
         welcomeViewController.setLabelText(inputTextField ?? "???")
         print("id 값 뭐야? \(String(describing: inputTextField))")
@@ -92,5 +92,11 @@ private extension LoginViewController {
         print("button Tapped")
   //    presentToWelcomeVC()
         pushToWelcomeVC()
+    }
+}
+
+extension LoginViewController_Delegate: DataBindDelegate {
+    func dataBind(id: String) {
+        passwordTextField.text = id
     }
 }
