@@ -69,7 +69,7 @@ extension ItemViewController: UICollectionViewDataSource,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCollectionViewCell.identifier, for: indexPath) as? ItemCollectionViewCell else { return UICollectionViewCell()}
         cell.dataBind(itemList[indexPath.row])
-        cell.backgroundColor = .red
+        cell.backgroundColor = .white
         return cell
     }
     
